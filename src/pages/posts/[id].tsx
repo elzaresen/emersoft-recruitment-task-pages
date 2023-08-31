@@ -1,7 +1,7 @@
 import { Category } from "@/types/category";
 import { Post } from "@/types/post";
 import axios from "axios";
-import next, { GetServerSideProps } from "next/types";
+import { GetServerSideProps } from "next/types";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -15,6 +15,8 @@ interface PostPageProps {
   nextPostId: number;
   prevPostId: number;
 }
+
+// Here I'm calling api outside of ssr, because next and previous articles are not essential for SEO in real world.
 
 const fetchPost = async (postId: number) => {
   const res = await axios.get(`/api/posts/${postId}`);

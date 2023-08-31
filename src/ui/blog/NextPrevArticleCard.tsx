@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Post } from "@/types/post";
 import Link from "next/link";
-import { Category } from "@/types/category";
 
 interface NextPrevArticleCardProps {
   data: Post;
