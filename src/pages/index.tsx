@@ -37,6 +37,7 @@ export default function Home(props: HomeProps) {
       delete router.query.categoryId;
     }
     router.push(router);
+    // useEffect dependency below may show a warning, but this is a known issue with NextJS router. 
   }, [selectedCategory]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
